@@ -1,15 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState } from "react";
+import Dog from "./components/Dog";
+import { Canvas } from "@react-three/fiber";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
-      app
+      <Canvas>
+        <Dog />
+      </Canvas>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
