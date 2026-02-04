@@ -1,10 +1,9 @@
-import { OrbitControls, useGLTF, useTexture } from "@react-three/drei";
+import { OrbitControls, useGLTF, useTexture ,useAnimations} from "@react-three/drei";
 import * as THREE from "three";
 import { useThree } from "@react-three/fiber";
-import { normalMap, texture } from "three/tsl";
+import { useEffect } from "react";
 const Dog = () => {
   // with the canvas on the app.jsx we can use useThree hook now
-
   useThree(({ camera, scene, gl }) => {
     camera.position.z = 0.55;
     // improving the colour sapce and render tech of opengl
@@ -29,15 +28,23 @@ const Dog = () => {
     return texture
   });
 
+//   animations
+const {actions}=useAnimations(model.animations,model.scene)
+// use effect to play the animation
+    useEffect(()=>{
+    actions["Take 001"].play()
+    }
+    ,[actions])
 
-
-  // now selecting dog to apply the texture
-  model.scene.traverse((child) => {
-    if (child.name.includes("DOG"))
-      child.material = new THREE.MeshMatcapMaterial({
+//  earlier for each child there is a new matrial formed so to fix that create material one time and use it 
+const material=  new THREE.MeshMatcapMaterial({
         normalMap: normalMap,
         matcap: sampleMatCap,
       });
+  // now selecting dog to apply the texture
+  model.scene.traverse((child) => {
+    if (child.name.includes("DOG"))
+      child.material = material
   });
   return (
     <>
