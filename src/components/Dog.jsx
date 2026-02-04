@@ -18,9 +18,11 @@ const Dog = () => {
     normalMap: "/dog_normals.jpg",
     sampleMatCap:"/matcap/mat-2.png"
   });*/
-  const [normalMap, sampleMatCap] = useTexture([
+  const [normalMap, sampleMatCap,branchMap,branchNormalMap] = useTexture([
     "/dog_normals.jpg",
     "/matcap/mat-2.png",
+    "branches_diffuse.jpg",
+    "branches_normals.jpg"
   ]).map((texture) => {
       // now the textrue auto flips the texture map so details are not good
       // now improve the colourspace of texture
@@ -41,11 +43,21 @@ const material=  new THREE.MeshMatcapMaterial({
         normalMap: normalMap,
         matcap: sampleMatCap,
       });
+
+const branchMaterial=new THREE.MeshMatcapMaterial({
+    normalMap:branchNormalMap,
+    map:branchMap
+})      
   // now selecting dog to apply the texture
   model.scene.traverse((child) => {
-    if (child.name.includes("DOG"))
-      child.material = material
-  });
+    if (child.name.includes("DOG")){
+        child.material = material
+    }else{
+        child.material=material
+    }
+  }
+
+);
   return (
     <>
       <primitive
