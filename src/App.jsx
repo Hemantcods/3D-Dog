@@ -8,16 +8,23 @@ function App() {
   return (
     <>
       <main>
+        <div className="images">
+          <img id="tommorowland" src="/tommorowland.png" alt="" />
+          <img id="navypier" src="/navypier.png" alt="" />
+          <img id="msichicago" src="/msichicago.png" alt="" />
+          <img id="louisephone" src="/louisephone.png" alt="" />
+          <img id="kiiak" src="/kiiak.png" alt="" />
+          <img id="kennedy" src="/kennedy.png" alt="" />
+          <img id="royalopera" src="/royalopera.png" alt="" />
+        </div>
         <Canvas
+        id='canvas-elem'
           style={{
             height: "100vh",
             position: "fixed",
             top: 0,
             left: 0,
             zIndex: 1,
-            backgroundImage: "url(/background-l.png)",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
           }}
         >
           <Dog />
@@ -78,31 +85,31 @@ function App() {
         </section>
         <section id="section-2">
           <div className="titles">
-            <div className="title">
+            <div img-id="tommorowland"  className="title">
               <small>2020 - ONGOING</small>
               <h1>Tommorowland</h1>
             </div>
-            <div className="title">
+            <div img-id="navypier" className="title">
               <small>2018 - TODAY</small>
               <h1>Navy Pier</h1>
             </div>
-            <div className="title">
+            <div img-id="msichicago" className="title">
               <small>2015 - TODAY</small>
               <h1>MSI Chicago</h1>
             </div>
-            <div className="title">
+            <div img-id="louisephone" className="title">
               <small>2016</small>
               <h1>This Was Louise's Phone</h1>
             </div>
-            <div className="title">
+            <div img-id="kiiak" className="title">
               <small>2012 - TODAY</small>
               <h1>KIKK Festival 2018</h1>
             </div>
-            <div className="title">
+            <div img-id="kennedy" className="title">
               <small>2017</small>
               <h1>The Kennedy Center</h1>
             </div>
-            <div className="title">
+            <div img-id="royalopera" className="title">
               <small>2016 - ONGOING</small>
               <h1>Royal Opera Of Wallonia</h1>
             </div>

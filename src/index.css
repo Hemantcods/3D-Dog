@@ -22,6 +22,19 @@ section {
   position: relative;
   z-index: 2;
 }
+#canvas-elem::after{
+  content:"";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-image:url(/background-l.png);
+  background-repeat:no-repeat;
+  background-size: cover;
+  transition: all 0.3s linear; 
+}
 
 #section-1 {
   --gap:3rem;
@@ -124,4 +137,49 @@ section {
   .title:hover{
     opacity: 1;
   }
+}
+main:has(#section-2 .title:hover) #canvas-elem::after{
+  opacity: 0;
+}
+.images{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all 0.3s linear;
+  }
+}
+main:has(#section-2 .title[img-id="tommorowland"]:hover) .images #tommorowland{
+  opacity: 1;
+  background-color: rgb(4, 8, 47);
+}
+main:has(#section-2 .title[img-id="navypier"]:hover) .images #navypier{
+  opacity: 1;
+}
+main:has(#section-2 .title[img-id="msichicago"]:hover) .images #msichicago{
+  opacity: 1;
+}
+main:has(#section-2 .title[img-id="louisephone"]:hover) .images #louisephone{
+  opacity: 1;
+}
+main:has(#section-2 .title[img-id="kiiak"]:hover) .images #kiiak{
+  opacity: 1;
+  background-color: rgba(17, 17, 168, 0.64);
+}
+main:has(#section-2 .title[img-id="kennedy"]:hover) .images #kennedy{
+  opacity: 1;
+  background-color: rgba(15, 79, 57, 0.497);
+}
+main:has(#section-2 .title[img-id="royalopera"]:hover) .images #royalopera{
+  opacity: 1;
+  background-color: rgb(108, 5, 5);
 }
