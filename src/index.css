@@ -96,3 +96,32 @@ section {
     right: 17%;
   }
 }
+#section-2{
+  .titles {
+    display: flex;
+    flex-direction: column;
+    padding-inline: 5rem;
+    .title{
+      display: flex;
+      gap:5rem;
+      opacity: 0.5;
+      padding-block: 2rem;
+      transition: all 0.3s linear;
+      cursor: pointer;
+      h1{
+        font-size: 6rem;
+        font-weight: 100 ;
+        line-height: 1;
+      }
+      small{
+        width: 7rem;
+        margin-top: 1rem;
+        font-size: 0.5rem;
+        font-size: 0.8rem;
+      }
+    }
+  }
+  .title:hover{
+    opacity: 1;
+  }
+}
