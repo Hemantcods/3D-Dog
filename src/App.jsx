@@ -3,7 +3,6 @@ import Dog from "./components/Dog";
 import { Canvas } from "@react-three/fiber";
 import "remixicon/fonts/remixicon.css";
 function App() {
-
   return (
     <>
       <main>
@@ -17,7 +16,7 @@ function App() {
           <img id="royalopera" src="/royalopera.png" alt="" />
         </div>
         <Canvas
-        id='canvas-elem'
+          id="canvas-elem"
           style={{
             height: "100vh",
             position: "fixed",
@@ -84,7 +83,7 @@ function App() {
         </section>
         <section id="section-2">
           <div className="titles">
-            <div img-id="tommorowland"  className="title">
+            <div img-id="tommorowland" className="title">
               <small>2020 - ONGOING</small>
               <h1>Tommorowland</h1>
             </div>
@@ -114,7 +113,44 @@ function App() {
             </div>
           </div>
         </section>
-        <section id="section-3"></section>
+        <section id="section-3">
+          <div className="top">
+            <div className="left">
+              <h3>
+                We're crafting <br /> emotional <br /> experiences aimed <br />{" "}
+                at improving <br /> results
+              </h3>
+            </div>
+            <div className="right"></div>
+          </div>
+        </section>
+        <section id="section-4">
+          <div className="bottom">
+            <div className="left">
+              <div className="third-line"></div>
+            </div>
+            <div className="right">
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem
+                repellat cupiditate animi accusamus perspiciatis facere nobis,
+                earum officiis fugiat inventore obcaecati doloremque molestiae
+                tenetur odio dolorum expedita quod ex voluptatum veniam
+                provident modi doloribus est! Itaque at adipisci, possimus
+                aspernatur culpa, provident sunt mollitia voluptate atque
+                perspiciatis excepturi, autem esse.
+              </p>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem
+                repellat cupiditate animi accusamus perspiciatis facere nobis,
+                earum officiis fugiat inventore obcaecati doloremque molestiae
+                tenetur odio dolorum expedita quod ex voluptatum veniam
+                provident modi doloribus est! Itaque at adipisci, possimus
+                aspernatur culpa, provident sunt mollitia voluptate atque
+                perspiciatis excepturi, autem esse.
+              </p>
+            </div>
+          </div>
+        </section>
       </main>
     </>
   );

@@ -22,23 +22,25 @@ section {
   position: relative;
   z-index: 2;
 }
-#canvas-elem::after{
-  content:"";
+
+#canvas-elem::after {
+  content: "";
   height: 100%;
   width: 100%;
   position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
-  background-image:url(/background-l.png);
-  background-repeat:no-repeat;
+  background-image: url(/background-l.png);
+  background-repeat: no-repeat;
   background-size: cover;
-  transition: all 0.3s linear; 
+  transition: all 0.3s linear;
 }
 
 #section-1 {
-  --gap:3rem;
+  --gap: 3rem;
   position: relative;
+
   nav {
     display: flex;
     justify-content: space-between;
@@ -60,74 +62,87 @@ section {
 
   }
 
-  .middle{
+  .middle {
     display: flex;
     gap: var(--gap);
+
     .left,
     .right {
       width: 50%;
     }
+
     .left {
       display: flex;
       align-items: center;
       justify-content: flex-end;
       padding-block: 8rem;
-      h1{
+
+      h1 {
         font-size: 5rem;
         line-height: 0.8;
         text-align: right;
       }
     }
   }
-  .bottom{
+
+  .bottom {
     display: flex;
     gap: var(--gap);
-    .left,.right{
+
+    .left,
+    .right {
       width: 50%;
     }
-    .right{
-      p{
+
+    .right {
+      p {
         font-weight: 200;
         line-height: 1.2;
       }
     }
   }
-  .first-line{
+
+  .first-line {
     width: 40rem;
     background-color: rgba(255, 0, 0, 0.552);
-    height: 2px;
+    height: 1px;
     position: absolute;
-    transform: rotate(45deg) translate(-10rem,-5rem);
+    transform: rotate(45deg) translate(-10rem, -5rem);
   }
-  .second-line{
+
+  .second-line {
     width: 10rem;
     background-color: rgba(255, 0, 0, 0.552);
-    height: 2px;
+    height: 1px;
     position: absolute;
-    transform: rotate(-45deg) ;
-    top:35%;
+    transform: rotate(-45deg);
+    top: 35%;
     right: 17%;
   }
 }
-#section-2{
+
+#section-2 {
   .titles {
     display: flex;
     flex-direction: column;
     padding-inline: 5rem;
     margin-block: 10rem;
-    .title{
+
+    .title {
       display: flex;
-      gap:5rem;
+      gap: 5rem;
       opacity: 0.5;
       padding-block: 2rem;
       transition: all 0.3s linear;
       cursor: pointer;
-      h1{
+
+      h1 {
         font-size: 6rem;
-        font-weight: 100 ;
+        font-weight: 100;
         line-height: 1;
       }
-      small{
+
+      small {
         width: 7rem;
         margin-top: 1rem;
         font-size: 0.5rem;
@@ -135,20 +150,24 @@ section {
       }
     }
   }
-  .title:hover{
+
+  .title:hover {
     opacity: 1;
   }
 }
-main:has(#section-2 .title:hover) #canvas-elem::after{
+
+main:has(#section-2 .title:hover) #canvas-elem::after {
   opacity: 0;
 }
-.images{
+
+.images {
   position: fixed;
   height: 100%;
   width: 100%;
   top: 0;
   left: 0;
-  img{
+
+  img {
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -159,28 +178,100 @@ main:has(#section-2 .title:hover) #canvas-elem::after{
     transition: all 0.3s linear;
   }
 }
-main:has(#section-2 .title[img-id="tommorowland"]:hover) .images #tommorowland{
+
+main:has(#section-2 .title[img-id="tommorowland"]:hover) .images #tommorowland {
   opacity: 1;
   background-color: rgb(4, 8, 47);
 }
-main:has(#section-2 .title[img-id="navypier"]:hover) .images #navypier{
+
+main:has(#section-2 .title[img-id="navypier"]:hover) .images #navypier {
   opacity: 1;
 }
-main:has(#section-2 .title[img-id="msichicago"]:hover) .images #msichicago{
+
+main:has(#section-2 .title[img-id="msichicago"]:hover) .images #msichicago {
   opacity: 1;
 }
-main:has(#section-2 .title[img-id="louisephone"]:hover) .images #louisephone{
+
+main:has(#section-2 .title[img-id="louisephone"]:hover) .images #louisephone {
   opacity: 1;
 }
-main:has(#section-2 .title[img-id="kiiak"]:hover) .images #kiiak{
+
+main:has(#section-2 .title[img-id="kiiak"]:hover) .images #kiiak {
   opacity: 1;
   background-color: rgba(17, 17, 168, 0.64);
 }
-main:has(#section-2 .title[img-id="kennedy"]:hover) .images #kennedy{
+
+main:has(#section-2 .title[img-id="kennedy"]:hover) .images #kennedy {
   opacity: 1;
   background-color: rgba(15, 79, 57, 0.497);
 }
-main:has(#section-2 .title[img-id="royalopera"]:hover) .images #royalopera{
+
+main:has(#section-2 .title[img-id="royalopera"]:hover) .images #royalopera {
   opacity: 1;
   background-color: rgb(108, 5, 5);
+}
+
+#section-3 {
+  min-height: initial;
+  padding-block: 10rem;
+  padding-inline: 10rem;
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
+
+  .top,
+  .bottom {
+    display: flex;
+    width: 100%;
+    gap: 10rem;
+  }
+
+  .left,
+  .right {
+    width: 50%;
+  }
+
+  .top .left {
+    padding-right: 5rem;
+
+    h3 {
+      font-size: 3rem;
+      font-size: 600;
+    }
+  }
+}
+
+#section-4 {
+  min-height: 50vh;
+
+  .bottom {
+    display: flex;
+    width: 100%;
+
+    .left,
+    .right {
+      width: 50%;
+    }
+
+    .right {
+      display: flex;
+
+      p {
+        opacity: 0.5;
+        font-weight: 200;
+      }
+    }
+
+    .left {
+      position: relative;
+
+      .third-line {
+        width: 20rem;
+        background-color: rgba(255, 0, 0, 0.552);
+        height: 1px;
+        position: absolute;
+        transform: rotate(45deg) translate(10rem, -5rem);
+      }
+    }
+  }
 }
