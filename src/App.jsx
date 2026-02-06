@@ -1,10 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Dog from "./components/Dog";
 import { Canvas } from "@react-three/fiber";
 import "remixicon/fonts/remixicon.css";
+import LoadingPage from "./components/Loading";
+
 function App() {
+  const [loader, showloader] = useState(true);
   return (
     <>
+      {loader && <LoadingPage onDone={() => {showloader(false)}} time={5} />}
+      <LoadingPage />
       <main>
         <div className="images">
           <img id="tommorowland" src="/tommorowland.png" alt="" />
