@@ -114,6 +114,7 @@ section {
     display: flex;
     flex-direction: column;
     padding-inline: 5rem;
+    margin-block: 10rem;
     .title{
       display: flex;
       gap:5rem;

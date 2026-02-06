@@ -3,7 +3,6 @@ import Dog from "./components/Dog";
 import { Canvas } from "@react-three/fiber";
 import "remixicon/fonts/remixicon.css";
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
     <>
