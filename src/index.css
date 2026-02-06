@@ -27,6 +27,9 @@
     margin-top: 4rem;
   }
 }
+body::-webkit-scrollbar {
+  display: none;
+}
 
 html,
 body,
